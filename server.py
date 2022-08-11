@@ -6,12 +6,11 @@ import cv2
 import numpy as np
 from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
+define("path", default="/usr/local/lib/python3.9/site-packages/cv2/data/haarcascade_frontalface_default.xml", help="run on the given port", type=str)
 
-faceCascade = cv2.CascadeClassifier(
-    r"/usr/local/lib/python3.9/site-packages/cv2/data/haarcascade_frontalface_default.xml")
-
-class MainHandler(tornado.web.RequestHandler):
+class MainHandler(tornado.web.RequestHandler):    
     def post(self):
+        faceCascade = cv2.CascadeClassifier(options.path)
         data = json.loads(self.request.body)
 
         img = data["img"]
