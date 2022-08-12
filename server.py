@@ -4,10 +4,16 @@ import tornado.web
 import json
 import cv2
 import numpy as np
+import sqlite3
+
 from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
 define("path", default="/usr/local/lib/python3.9/site-packages/cv2/data/haarcascade_frontalface_default.xml", help="run on the given port", type=str)
 
+conn=sqlite3.connect("ultraman.db")
+
+recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer.read("ultraman.xml")
 class MainHandler(tornado.web.RequestHandler):    
     def post(self):
         faceCascade = cv2.CascadeClassifier(options.path)
@@ -25,19 +31,18 @@ class MainHandler(tornado.web.RequestHandler):
             minSize=(5, 5)
         )
         for (x, y, w, h) in faces:
-            cv2.rectangle(img1, (x, y), (x+w, y+h), (0, 255, 0), 2)
-            font = cv2.FONT_HERSHEY_SIMPLEX
-            # cv2.putText(img,'OpenCV',(10,500), font, 4,(255,255,255),2,cv2.LINE_AA)
-            cv2.putText(img1, "KUN", (x, y), font, 1, (0, 255, 0), 2)
+            tmp_img = gray[y:y+h, x:x+w]
+            label, confidence = recognizer.predict(tmp_img)
+            sql = "SELECT * FROM ultraman WHERE id = %d" % label
+            row = conn.execute(sql).fetchone()
         
         newImgData = np.array(cv2.imencode('.jpg',img1)[1])
-        # tempFile = open("a.jpg", mode="ab")
-        # tempFile.write(newImgData)
-        # tempFile.close()
 
         resp = dict()
-        resp["img"] = str(base64.b64encode(newImgData),'utf-8')
-        resp["name"] = "迪迦奥特曼"
+        # resp["img"] = str(base64.b64encode(newImgData),'utf-8')
+        # resp["name"] = "迪迦奥特曼"
+        resp["img"] = row[2]
+        resp["name"] = row[1]
         self.write(resp)
 
 
