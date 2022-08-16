@@ -21,7 +21,7 @@ class MainHandler(tornado.web.RequestHandler):
         # 读取图片
         img1 = cv2.imdecode(np.array(bytearray(imgData)),cv2.IMREAD_COLOR)
         # 预测
-        data = predictSingleImg("deploy/configs/inference_ultraman.yaml",img1)
+        data = predictSingleImg(img1)
         name = 'marin'
         # 获取预测到的图片名称
         if len(data) > 0:

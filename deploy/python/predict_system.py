@@ -140,11 +140,10 @@ def mainN(configFile,imgUrl):
         # print(output)
     return output   
 
-def predictSingleImg(configFile,img):
-    conf = config.get_config(configFile)
-    system_predictor = SystemPredictor(conf)
+conf = config.get_config("deploy/configs/inference_ultraman.yaml")
+system_predictor = SystemPredictor(conf)
+def predictSingleImg(img):
     return system_predictor.predict(img)
-
 
 if __name__ == "__main__":
     args = config.parse_args()
