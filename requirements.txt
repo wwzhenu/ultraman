@@ -7,6 +7,6 @@ PyYAML
 visualdl >= 2.0.0b
 scipy
 scikit-learn
-gast==0.3.3
+gast
 tornado==6.2
 numpy
