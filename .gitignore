@@ -1,2 +1,8 @@
 *.xml
 *.db
+*.jpeg
+*.png
+*.jpg
+*.tar
+deploy/output/
+deploy/models/

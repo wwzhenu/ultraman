@@ -1,0 +1,10 @@
+gallery/001.png	迪迦奥特曼
+gallery/002.png	迪迦奥特曼
+gallery/003.png	迪迦奥特曼
+gallery/004.png	迪迦奥特曼
+gallery/005.png	迪迦奥特曼
+gallery/006.png	迪迦奥特曼
+gallery/007.png	迪迦奥特曼
+gallery/008.png	迪迦奥特曼
+gallery/009.png	迪迦奥特曼
+gallery/010.png	迪迦奥特曼
