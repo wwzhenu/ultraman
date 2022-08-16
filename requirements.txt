@@ -8,5 +8,5 @@ visualdl >= 2.0.0b
 scipy
 scikit-learn
 gast
-tornado==6.2
+tornado>=6.2
 numpy
