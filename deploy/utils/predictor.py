@@ -40,7 +40,6 @@ class Predictor(object):
         params_file = os.path.join(inference_model_dir, "inference.pdiparams")
         model_file = os.path.join(inference_model_dir, "inference.pdmodel")
         config = Config(model_file, params_file)
-
         if args.use_gpu:
             config.enable_use_gpu(args.gpu_mem, 0)
         else:

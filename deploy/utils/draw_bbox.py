@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 def draw_bbox_results(image,
                       results,
                       input_path,
-                      font_path="/Users/Marin/paddleUltraman/deploy/utils/simfang.ttf",
+                      font_path="deploy/utils/simfang.ttf",
                       save_dir=None):
     if isinstance(image, np.ndarray):
         image = Image.fromarray(image)

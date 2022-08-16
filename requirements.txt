@@ -1,3 +1,12 @@
-numpy==1.19.5
-opencv_python==4.6.0.66
+prettytable
+ujson
+opencv-python
+pillow
+tqdm
+PyYAML
+visualdl >= 2.0.0b
+scipy
+scikit-learn
+gast==0.3.3
 tornado==6.2
+numpy
