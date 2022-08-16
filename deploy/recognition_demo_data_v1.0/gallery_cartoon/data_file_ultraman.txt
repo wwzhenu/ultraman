@@ -8,3 +8,13 @@ gallery/007.png	迪迦奥特曼
 gallery/008.png	迪迦奥特曼
 gallery/009.png	迪迦奥特曼
 gallery/010.png	迪迦奥特曼
+gallery/011.png	泰迦奥特曼
+gallery/012.png	泰迦奥特曼
+gallery/013.png	泰迦奥特曼
+gallery/014.png	泰迦奥特曼
+gallery/015.png	泰迦奥特曼
+gallery/016.png	泰迦奥特曼
+gallery/017.png	泰迦奥特曼
+gallery/018.png	泰迦奥特曼
+gallery/019.png	泰迦奥特曼
+gallery/020.png	泰迦奥特曼
