@@ -34,7 +34,7 @@ class MainHandler(tornado.web.RequestHandler):
         resp = dict()
         # resp["img"] = str(base64.b64encode(newImgData),'utf-8')
         # resp["name"] = "迪迦奥特曼"
-        resp["img"] = row[2]
+        resp["img"] = row[3]
         resp["name"] = row[1]
         self.write(resp)
 
