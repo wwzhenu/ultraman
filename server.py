@@ -28,14 +28,15 @@ class MainHandler(tornado.web.RequestHandler):
             rs = data[0]
             name = rs['rec_docs']        
         # 数据查询
-        sql = "SELECT * FROM ultraman WHERE name = '%s'" % name
+        sql = "SELECT * FROM ultramanNew WHERE name = '%s'" % name
         row = conn.execute(sql).fetchone()
         # 返回
         resp = dict()
         # resp["img"] = str(base64.b64encode(newImgData),'utf-8')
         # resp["name"] = "迪迦奥特曼"
-        resp["img"] = row[3]
-        resp["name"] = row[1]
+        resp["desc"] = row[2]
+        resp["img"] = row[1]
+        resp["name"] = row[0]
         self.write(resp)
 
 
