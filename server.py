@@ -19,7 +19,7 @@ class MainHandler(tornado.web.RequestHandler):
         img = data["img"]
         imgData = base64.b64decode(img)
         # 读取图片
-        img1 = cv2.imdecode(np.array(bytearray(imgData)),cv2.IMREAD_COLOR)
+        img1 = cv2.imdecode(np.array(bytearray(imgData)),cv2.IMREAD_COLOR)[:, :, ::-1]
         # 预测
         data = predictSingleImg(img1)
         print(data)
