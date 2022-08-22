@@ -22,6 +22,7 @@ class MainHandler(tornado.web.RequestHandler):
         img1 = cv2.imdecode(np.array(bytearray(imgData)),cv2.IMREAD_COLOR)
         # 预测
         data = predictSingleImg(img1)
+        print(data)
         name = 'marin'
         # 获取预测到的图片名称
         if len(data) > 0:
