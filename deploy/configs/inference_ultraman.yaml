@@ -11,8 +11,8 @@ Global:
   labe_list:
   - foreground
 
-  use_gpu: False
-  enable_mkldnn: False
+  use_gpu: True
+  enable_mkldnn: True
   cpu_num_threads: 10
   enable_benchmark: True
   use_fp16: False
