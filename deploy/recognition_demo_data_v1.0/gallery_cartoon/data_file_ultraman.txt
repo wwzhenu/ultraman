@@ -38,3 +38,4 @@ gallery/037.png	捷德奥特曼
 gallery/038.png	捷德奥特曼
 gallery/039.png	捷德奥特曼
 gallery/040.png	捷德奥特曼
+gallery/041.png	德凯奥特曼
